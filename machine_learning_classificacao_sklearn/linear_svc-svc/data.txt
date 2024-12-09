@@ -1,0 +1,2 @@
+uri_tracking = 'https://gist.github.com/guilhermesilveira/b9dd8e4b62b9e22ebcb9c8e89c271de4' 
+uri_projetos = 'https://gist.github.com/guilhermesilveira/12291c548acaf544596795709020e3db'

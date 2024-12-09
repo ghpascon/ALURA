@@ -1,0 +1,21 @@
+Regressão Linear: encontrar a reta que melhor define a relação entre variaveis, muito utilizada para prever valores
+
+Regressão lógica: Classificação binária, por exemplo definir se a imagem é de um cachorro ou não
+
+Árvore de decisão: Classifica uma informação com base em divisoes binárias até que se chegue em um resultado válido
+
+Florestas aleatórias: Cria varias arvores de decisão com amostras e parametros aleatórios dentro da base de dados, evitando o overfiting
+
+K-means clustering: K é o numero de grupos, dessa forma o algoritimo funciona de forma não supervisionada e separa os dados na quantidade de grupos definidos
+
+Redes Neurais:
+-Redes Neurais Feedforward (FF): Cada camada passa a informação para a outra sem retroalimentação
+
+-Redes Neurais Recorrentes (RNN): projetadas para lidar com dados sequenciais, saídas anteriores influenciam as saídas futuras
+
+-Memória de Longo/Curto Prazo (LSTM): Lembram de eventos em camadas anteriores, permitindo a manipulação de dados sequenciais como completar o texto
+
+-Redes Neurais Convolucionais (CNN): Visão computacional, extraem padrões espaciais em dados
+
+-Redes Adversárias Generativas (GAN): Duas redes neurais que competem entre si, uma cria dados semelhantes aos reais e a outra tenta diferenciar
+

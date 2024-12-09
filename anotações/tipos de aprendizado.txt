@@ -1,0 +1,6 @@
+Aprendizado supervisionado: Entrada com sua respectiva saída, imagem de um gato e a denominação de um gato
+
+Aprendizado não supervisionado: Agrupa os dados em grupos semelhantes, cria uma comunidade de pessoas com interesses semelhantes
+
+Aprendizado por reforço: Baseado em feedback, bot de um jogo que recebe feedbacks conforme seu resultado no jogo
+

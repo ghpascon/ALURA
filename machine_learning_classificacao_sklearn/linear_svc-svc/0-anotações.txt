@@ -1,0 +1,3 @@
+LinearSVC - UTILIZADO PARA MODELOS EM QUE EXISTA UMA LINEARIDADE, COMO CARACTERISTICAS BINARIAS, CASO O MODELO SEJA UMA LINHA QUE NAO SEJA RETA ELE VAI PERFORMAR MAL
+
+SVC - utilizado para separa nao necessariamente de maneira linear, reescalar os dados quando sao de escalas diferente pode ajudar a melhorar o resultado
