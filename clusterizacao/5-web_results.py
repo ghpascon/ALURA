@@ -5,14 +5,14 @@ import pandas as pd
 
 
 def load_obj(filename):
-    # script_dir = os.path.dirname(os.path.abspath(__file__))
-    # nome_arquivo = os.path.join(script_dir, filename)
     try:
-        with open(filename, 'rb') as arquivo:
+        # Caminho relativo ao diretório atual
+        nome_arquivo = os.path.join(os.getcwd(), filename)
+        with open(nome_arquivo, 'rb') as arquivo:
             return pickle.load(arquivo)
-
     except Exception as e:
-        print(f"Erro ao carregar o arquivo: {e}")   
+        st.error(f"Erro ao carregar o arquivo {filename}: {e}")
+        return None
 
 def processar_prever (df):
     model = load_obj('obj/model.pkl')
