@@ -5,10 +5,10 @@ import pandas as pd
 
 
 def load_obj(filename):
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    nome_arquivo = os.path.join(script_dir, filename)
+    # script_dir = os.path.dirname(os.path.abspath(__file__))
+    # nome_arquivo = os.path.join(script_dir, filename)
     try:
-        with open(nome_arquivo, 'rb') as arquivo:
+        with open(filename, 'rb') as arquivo:
             return pickle.load(arquivo)
 
     except Exception as e:
