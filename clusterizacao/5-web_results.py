@@ -5,16 +5,20 @@ import pandas as pd
 
 
 def load_obj(filename):
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    nome_arquivo = os.path.join(script_dir, filename)
+    # script_dir = os.path.dirname(os.path.abspath(__file__))
+    # nome_arquivo = os.path.join(script_dir, filename)
     try:
-        with open(nome_arquivo, 'rb') as arquivo:
+        with open(filename, 'rb') as arquivo:
             return pickle.load(arquivo)
 
     except Exception as e:
         print(f"Erro ao carregar o arquivo: {e}")   
 
-def processar_prever (df, model, encoder, scaler):
+def processar_prever (df):
+    model = load_obj('obj/model.pkl')
+    encoder = load_obj('obj/encoder.pkl')
+    scaler = load_obj('obj/scaler.pkl')
+
     encoded_sexo = encoder.transform(df[['sexo']])
     encoded_df = pd.DataFrame(encoded_sexo, columns=encoder.get_feature_names_out(['sexo']))
     dados = pd.concat([df.drop('sexo', axis=1), encoded_df], axis=1)
@@ -26,10 +30,6 @@ def processar_prever (df, model, encoder, scaler):
     return cluster
 
 if __name__ == "__main__":
-    model = load_obj('obj/model.pkl')
-    encoder = load_obj('obj/encoder.pkl')
-    scaler = load_obj('obj/scaler.pkl')
-
     st.title('Clusterização para Marketing')
     st.write('Aplicação de KMeans para clusterizar os dados em diversos grupos')
 
@@ -43,7 +43,7 @@ if __name__ == "__main__":
                         - **Grupo 2** é mais equilibrado, com interesses em música, dança, e moda.
                     """)
         df = pd.read_csv(up_file)
-        cluster = processar_prever(df, model, encoder, scaler)
+        cluster = processar_prever(df)
         df.insert(0, 'grupos', cluster)
         
         st.write('Visualização dos resultados (10 primeiros registros):')
