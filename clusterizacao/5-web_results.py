@@ -5,16 +5,16 @@ import pandas as pd
 
 
 def load_obj(filename):
-    # script_dir = os.path.dirname(os.path.abspath(__file__))
-    # nome_arquivo = os.path.join(script_dir, filename)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    nome_arquivo = os.path.join(script_dir, filename)
     try:
-        with open(filename, 'rb') as arquivo:
+        with open(nome_arquivo, 'rb') as arquivo:
             return pickle.load(arquivo)
 
     except Exception as e:
         print(f"Erro ao carregar o arquivo: {e}")   
 
-def processar_prever (df, model):
+def processar_prever (df, model, encoder, scaler):
     encoded_sexo = encoder.transform(df[['sexo']])
     encoded_df = pd.DataFrame(encoded_sexo, columns=encoder.get_feature_names_out(['sexo']))
     dados = pd.concat([df.drop('sexo', axis=1), encoded_df], axis=1)
@@ -43,7 +43,7 @@ if __name__ == "__main__":
                         - **Grupo 2** é mais equilibrado, com interesses em música, dança, e moda.
                     """)
         df = pd.read_csv(up_file)
-        cluster = processar_prever(df, model)
+        cluster = processar_prever(df, model, encoder, scaler)
         df.insert(0, 'grupos', cluster)
         
         st.write('Visualização dos resultados (10 primeiros registros):')
