@@ -15,9 +15,9 @@ def load_obj(filename):
         return None
 
 def processar_prever (df):
-    model = load_obj('obj/model.pkl')
-    encoder = load_obj('obj/encoder.pkl')
-    scaler = load_obj('obj/scaler.pkl')
+    model = load_obj('clusterizacao/obj/model.pkl')
+    encoder = load_obj('clusterizacao/obj/encoder.pkl')
+    scaler = load_obj('clusterizacao/obj/scaler.pkl')
 
     encoded_sexo = encoder.transform(df[['sexo']])
     encoded_df = pd.DataFrame(encoded_sexo, columns=encoder.get_feature_names_out(['sexo']))
