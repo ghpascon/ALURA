@@ -1,7 +1,15 @@
 import pickle
 import os
-import  streamlit as st
+import streamlit as st
 import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import silhouette_score, silhouette_samples
+import matplotlib.cm as cm 
+
+from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
+
+
+from sklearn.cluster import KMeans 
 
 
 def load_obj(filename):
