@@ -1,0 +1,6 @@
+streamlit
+pandas
+nltk
+unidecode
+plotly
+wordcloud
