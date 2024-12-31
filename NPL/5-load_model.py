@@ -12,11 +12,11 @@ download('rslp')
 
 def load_model():
     try:
-        with open("NPL/model/modelo_npl.pkl", 'rb') as arquivo:
+        with open("NPL/model/modelo_npl_imdb.pkl", 'rb') as arquivo:
             model = pickle.load(arquivo)
             print("Modelo carregado com sucesso!")
 
-        with open("NPL/model/vetor_npl.pkl", 'rb') as arquivo:
+        with open("NPL/model/vetor_npl_imdb.pkl", 'rb') as arquivo:
             vetor = pickle.load(arquivo)
             print("Vetor carregado com sucesso!")
 
