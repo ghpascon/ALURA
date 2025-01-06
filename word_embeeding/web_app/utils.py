@@ -1,12 +1,12 @@
 import pickle
 from gensim.models import KeyedVectors
 import numpy as np
-import joblib
 
 class MODELS:
     def __init__(self):
         try:
-            self.nlp = joblib.load('word_embeeding/model/nlp.pkl')
+            with open('word_embeeding/model/nlp.pkl', 'rb') as f:
+                self.nlp = pickle.load(f)
 
             self.w2v_model = KeyedVectors.load_word2vec_format('word_embeeding/model/sg_model.txt')
 
