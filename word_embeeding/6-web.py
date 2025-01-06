@@ -29,9 +29,17 @@ if __name__ == '__main__':
         progresso.progress(60)
         
         vetor = model_class.combinar_vet_sum(tokens)
-        category = model_class.classificador.predict(vetor)
         
-        progresso.progress(100)
-        st.write(f'A categoria da notícia é: {category[0]}')
+        # Obter as probabilidades para todas as classes
+        probabilidades = model_class.classificador.predict_proba(vetor)
 
+        # Obter a classe com maior probabilidade
+        category = model_class.classificador.predict(vetor)
+
+        # Encontrar a probabilidade da classe prevista
+        probabilidade = probabilidades[0][model_class.classificador.classes_.tolist().index(category[0])]
+
+        # Exibir a categoria e a probabilidade
+        progresso.progress(100)
+        st.write(f'A categoria da notícia é: {category[0]} com {probabilidade*100:.2f}% de probabilidade')
 #streamlit run word_embeeding/6-web.py
