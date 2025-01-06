@@ -2,30 +2,12 @@ import pickle
 from gensim.models import KeyedVectors
 import spacy
 import numpy as np
-import subprocess
-import sys
-def install_spacy_model():
-    try:
-        spacy.load("pt_core_news_sm")
-        print('NLP já carregado')
-    except OSError:
-        result = subprocess.run(
-            [sys.executable, "-m", "spacy", "download", "pt_core_news_sm"],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-        )
-        if result.returncode == 0:
-            print("O pacote 'pt_core_news_sm' foi instalado com sucesso!")
-        else:
-            print(f"Erro ao instalar o pacote: {result.stderr}")
+
 
 class MODELS:
     def __init__(self):
         try:
-            install_spacy_model()
-
-            self.nlp = spacy.load('pt_core_news_sm', disable=['paser', 'ner', 'tagger', 'textcat'])
+            self.nlp = spacy.load('pt_core_news_sm')
 
             self.w2v_model = KeyedVectors.load_word2vec_format('word_embeeding/model/sg_model.txt')
 
