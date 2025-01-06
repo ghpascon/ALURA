@@ -1,5 +1,5 @@
-streamlit==1.18.1
-pickle-mixin==1.0.2
-gensim==4.3.0
-spacy==3.5.0
-numpy==1.24.0
+streamlit
+pickle-mixin
+gensim
+spacy
+numpy
