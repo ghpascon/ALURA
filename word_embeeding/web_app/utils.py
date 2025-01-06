@@ -8,12 +8,8 @@ import sys
 class MODELS:
     def __init__(self):
         try:
-            try:
-                self.nlp = spacy.load('pt_core_news_sm')
-            except OSError:
-                subprocess.run([sys.executable, "-m", "spacy", "download", "pt_core_news_sm"], check=True)
-                self.nlp = spacy.load('pt_core_news_sm')
-
+            with open('word_embeeding/model/nlp.pkl', 'rb') as f:
+                self.nlp = pickle.load(f)
 
             self.w2v_model = KeyedVectors.load_word2vec_format('word_embeeding/model/sg_model.txt')
 

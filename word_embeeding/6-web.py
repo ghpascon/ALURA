@@ -3,7 +3,7 @@ from web_app import utils
 
 if __name__ == '__main__':
     if 'model' not in st.session_state:
-        st.session_state.model = utils.MODELS()  # Carregue o modelo uma vez
+        st.session_state.model = utils.MODELS()  
 
     model_class = st.session_state.model
    
