@@ -2,8 +2,6 @@ import streamlit as st
 import cv2
 import numpy as np
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd = 'computer_vision/tesseract/tesseract.exe'
-config_tesseract = '--tessdata-dir computer_vision/tesseract/tessdata --psm 6'
 
 def caixa_texto(i, resultado, img, cor = (255, 0, 0), show_txt=True):
     x = resultado['left'][i]
@@ -72,6 +70,9 @@ def get_img_data(img, lang):
 
 
 if __name__ == "__main__":
+    pytesseract.pytesseract.tesseract_cmd = 'computer_vision/tesseract/tesseract.exe'
+    config_tesseract = '--tessdata-dir computer_vision/tesseract/tessdata --psm 6'
+    
     st.set_page_config(
         page_title="Imagem para texto",
         layout="wide",
