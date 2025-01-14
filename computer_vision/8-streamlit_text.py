@@ -2,8 +2,8 @@ import streamlit as st
 import cv2
 import numpy as np
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd = 'computer_vision/tesseract/tesseract.exe'
-config_tesseract = '--tessdata-dir computer_vision/tesseract/tessdata --psm 6'
+pytesseract.pytesseract.tesseract_cmd = 'tesseract/tesseract.exe'
+config_tesseract = '--tessdata-dir tesseract/tessdata --psm 6'
 
 def caixa_texto(i, resultado, img, cor = (255, 0, 0), show_txt=True):
     x = resultado['left'][i]
