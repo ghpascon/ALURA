@@ -4,7 +4,7 @@ import dlib
 import matplotlib.pyplot as plt
 from scipy.spatial import distance 
 
-classificado_dlib_68 = dlib.shape_predictor("computer vision/classificador/shape_predictor_68_face_landmarks.dat")
+classificado_dlib_68 = dlib.shape_predictor("computer_vision/classificador/shape_predictor_68_face_landmarks.dat")
 face_detector = dlib.get_frontal_face_detector()
 
 FACE = list(range(17, 68))
@@ -154,5 +154,5 @@ def show_video(path, name='Video', treatment = 0, interval = 10, size=(500, 400)
         print("Recursos liberados.")
 
 if __name__ =="__main__":
-    # show_video(0, treatment=3, interval=20)
-    show_video('computer vision/data/bocejo.mov', treatment=3, interval=10)
+    show_video(0, treatment=2, interval=20)
+    # show_video('computer_vision/data/bocejo.mov', treatment=3, interval=10)
