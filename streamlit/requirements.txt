@@ -1,4 +1,4 @@
 plotly==5.14.1
-pandas==1.5.3
+pandas
 requests==2.29.0
 numpy
