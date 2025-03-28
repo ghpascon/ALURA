@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <a href="/login" class="btn btn-primary">Login</a>
+    <a href="/logout" class="btn btn-danger">Logout</a>
+    <a href="/novo" class="btn btn-success">Adicionar Jogo</a>
+    <table class="table table-striped table-responsive table-bordered">
+        <thead class="thead-default">
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Console</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for jogo in jogos %}
+            <tr>
+                <td>{{jogo.nome}}</td>
+                <td>{{jogo.categoria}}</td>
+                <td>{{jogo.console}}</td>
+                <td><a href="/editar?id={{jogo.id}}"><button class="btn btn-primary">✏️</button></a></td>
+                <td><a href="/excluir?id={{jogo.id}}"><button class="btn btn-danger">🗑️</button></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

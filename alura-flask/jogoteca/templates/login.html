@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST" action="/autenticar">
+    {{ form.csrf_token() }}
+    
+    <input type="hidden" name="page" value="{{page}}">
+    <div class="form-group">
+        {{ form.usuario.label(class="form-label") }}
+        {{ form.usuario(class="form-control") }}        
+    </div>
+    <div class="form-group">
+        {{ form.senha.label(class="form-label") }}
+        {{ form.senha(class="form-control") }}       
+    </div>
+    <div class="buttons">
+    {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>
+{% endblock %}

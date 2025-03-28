@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST" action="{{url_for('prever_casa')}}">
+    {{ form.csrf_token() }}
+    <div class="form-group">
+        {{ form.tamanho.label(class="form-label") }}
+        {{ form.tamanho(class="form-control") }}        
+    </div>
+    <div class="form-group">
+        {{ form.ano.label(class="form-label") }}
+        {{ form.ano(class="form-control") }}        
+    </div>
+    <div class="form-group">
+        {{ form.garagem.label(class="form-label") }}
+        {{ form.garagem(class="form-control") }}        
+    </div>
+    <div class="buttons" style="margin-top: 10px;">
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>
+{% endblock %}

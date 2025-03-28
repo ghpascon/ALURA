@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST" action="{{url_for('sentimento')}}">
+    {{ form.csrf_token() }}
+    <div class="form-group">
+        {{ form.frase.label(class="form-label") }}
+        {{ form.frase(class="form-control") }}        
+    </div>
+    <div class="buttons" style="margin-top: 10px;">
+    {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>
+{% endblock %}

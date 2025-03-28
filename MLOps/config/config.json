@@ -1,0 +1,8 @@
+{
+    "SGBD":"mysql+mysqlconnector",
+    "usuario":"root",
+    "senha":"admin",
+    "host":"localhost",
+    "db_name":"jogoteca",
+    "secret":"secret"
+}

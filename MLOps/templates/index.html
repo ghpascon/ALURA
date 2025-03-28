@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="display: flex; margin-bottom: 10px; margin-top: 10px; gap: 10px;">
+    <h2>Logado como: {{username}}</h2>
+    <a href="{{url_for('logout')}}" class="btn btn-danger" style="margin-right: 10px;">Logout</a>
+</div>
+<div class="container" style="margin-bottom: 10px;">
+    <a href="{{url_for('analise_sentimento')}}"><button class="btn btn-primary">Analisar Sentimento</button></a>
+</div>
+<div class="container" style="margin-bottom: 10px;">
+    <a href="{{url_for('preco_casa')}}"><button class="btn btn-primary">Prever preço casa</button></a>
+</div>
+{% endblock %}
